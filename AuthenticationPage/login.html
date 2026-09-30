@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Clara - Caregiver Login</title>
+
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+
+    <!-- AUTH PAGE -->
+
+    <div class="auth-page">
+
+        <!-- LEFT SIDE -->
+        <div class="auth-intro">
+
+            <div class="brand">
+                <div class="brand-icon">+</div>
+
+                <div>
+                    <h2>CLARA</h2>
+                    <p>AI Companion for Dementia Care</p>
+                </div>
+            </div>
+
+
+            <div class="intro-content">
+
+                <span class="small-label">
+                    CAREGIVER PORTAL
+                </span>
+
+                <h1>
+                    Welcome Back,
+                    <span>Caregiver.</span>
+                </h1>
+
+                <p>
+                    Sign in to continue providing personalized
+                    and compassionate support with Clara.
+                </p>
+
+
+                <div class="benefits">
+
+                    <div class="benefit">
+                        <span>✓</span>
+                        <p>Access your caregiver dashboard</p>
+                    </div>
+
+                    <div class="benefit">
+                        <span>✓</span>
+                        <p>Manage patient information</p>
+                    </div>
+
+                    <div class="benefit">
+                        <span>✓</span>
+                        <p>Monitor conversations and insights</p>
+                    </div>
+
+                    <div class="benefit">
+                        <span>✓</span>
+                        <p>Receive important caregiver alerts</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="intro-bottom">
+                <span>♡</span>
+                Your care makes a difference.
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="auth-form-section">
+
+            <div class="auth-card">
+
+                <div class="mobile-brand">
+                    <div class="brand-icon">+</div>
+                    <h2>CLARA</h2>
+                </div>
+
+
+                <div class="form-heading">
+
+                    <h1>Caregiver Login</h1>
+
+                    <p>
+                        Welcome back! Please login to your account.
+                    </p>
+
+                </div>
+
+
+                <form id="loginForm">
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">✉</span>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email address"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-group">
+
+                        <div class="label-row">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <a href="#" class="forgot-link">
+                                Forgot password?
+                            </a>
+
+                        </div>
+
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">🔒</span>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                onclick="togglePassword('password', this)"
+                            >
+                                👁
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- REMEMBER -->
+
+                    <div class="remember-row">
+
+                        <label class="remember">
+
+                            <input
+                                type="checkbox"
+                                id="remember"
+                            >
+
+                            <span>
+                                Remember me
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="auth-btn"
+                    >
+                        Login
+                    </button>
+
+
+                    <!-- DIVIDER -->
+
+                    <div class="divider">
+
+                        <span></span>
+
+                        <p>OR</p>
+
+                        <span></span>
+
+                    </div>
+
+
+                    <!-- GOOGLE -->
+
+                    <button
+                        type="button"
+                        class="google-btn"
+                    >
+                        <span class="google-icon">G</span>
+                        Continue with Google
+                    </button>
+
+
+                    <!-- SIGNUP -->
+
+                    <p class="switch-auth">
+
+                        Don't have an account?
+
+                        <a href="signup.html">
+                            Sign Up
+                        </a>
+
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="auth.js"></script>
+
+</body>
+
+</html>
