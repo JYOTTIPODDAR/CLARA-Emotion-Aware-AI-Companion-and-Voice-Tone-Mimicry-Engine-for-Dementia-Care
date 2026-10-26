@@ -2,7 +2,8 @@ fastapi
 uvicorn[standard]
 sqlalchemy
 psycopg[binary]
-pydantic-settings
-pwdlib[argon2]
-PyJWT
+python-dotenv
+pydantic[email]
+passlib[bcrypt]
+python-jose[cryptography]
 python-multipart
