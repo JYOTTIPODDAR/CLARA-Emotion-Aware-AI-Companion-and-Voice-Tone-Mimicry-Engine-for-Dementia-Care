@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 import { useEffect, useState } from "react";
 import {
   UserPlus,
@@ -43,7 +42,11 @@ export default function PatientProfile() {
   const [success, setSuccess] = useState("");
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(patients));
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(patients));
+    } catch {
+      setError("Patient data could not be saved in this browser.");
+    }
   }, [patients]);
 
   function openAddForm() {
@@ -56,13 +59,14 @@ export default function PatientProfile() {
 
   function openEditForm(patient) {
     setForm({
-      name: patient.name,
-      email: patient.email,
+      name: patient.name || "",
+      email: patient.email || "",
       password: patient.password || "",
-      age: patient.age,
-      language: patient.language,
+      age: patient.age || "",
+      language: patient.language || "Hindi",
       notes: patient.notes || "",
     });
+
     setEditingId(patient.id);
     setError("");
     setSuccess("");
@@ -79,21 +83,23 @@ export default function PatientProfile() {
     setError("");
     setSuccess("");
 
+    const name = form.name.trim();
     const email = form.email.trim().toLowerCase();
+    const password = form.password;
 
-    if (!form.name.trim() || !email || !form.password) {
+    if (!name || !email || !password) {
       setError("Please fill in the name, email and temporary password.");
       return;
     }
 
-    if (form.password.length < 8) {
+    if (password.length < 8) {
       setError("Temporary password must contain at least 8 characters.");
       return;
     }
 
     const duplicateEmail = patients.some(
       (patient) =>
-        patient.email.toLowerCase() === email &&
+        patient.email?.toLowerCase() === email &&
         patient.id !== editingId
     );
 
@@ -104,9 +110,9 @@ export default function PatientProfile() {
 
     const patientData = {
       id: editingId || crypto.randomUUID(),
-      name: form.name.trim(),
+      name,
       email,
-      password: form.password,
+      password,
       age: form.age,
       language: form.language,
       notes: form.notes.trim(),
@@ -139,12 +145,13 @@ export default function PatientProfile() {
     setPatients((previous) =>
       previous.filter((patient) => patient.id !== id)
     );
+
     setSuccess("Patient deleted.");
     setError("");
   }
 
   const filteredPatients = patients.filter((patient) =>
-    `${patient.name} ${patient.email}`
+    `${patient.name || ""} ${patient.email || ""}`
       .toLowerCase()
       .includes(search.toLowerCase())
   );
@@ -218,14 +225,17 @@ export default function PatientProfile() {
             <div className="patient-empty-icon">
               <Users size={30} />
             </div>
+
             <h3>
               {search ? "No matching patients" : "No patients added yet"}
             </h3>
+
             <p>
               {search
                 ? "Try searching with a different name or email."
                 : "Add your first patient to get started with CLARA."}
             </p>
+
             {!search && (
               <button className="patient-primary-btn" onClick={openAddForm}>
                 <UserPlus size={18} />
@@ -245,13 +255,14 @@ export default function PatientProfile() {
                   <th>Actions</th>
                 </tr>
               </thead>
+
               <tbody>
                 {filteredPatients.map((patient) => (
                   <tr key={patient.id}>
                     <td>
                       <div className="patient-name-cell">
                         <div className="patient-avatar">
-                          {patient.name.charAt(0).toUpperCase()}
+                          {(patient.name || "?").charAt(0).toUpperCase()}
                         </div>
                         <div>
                           <strong>{patient.name}</strong>
@@ -259,9 +270,11 @@ export default function PatientProfile() {
                         </div>
                       </div>
                     </td>
+
                     <td>{patient.age || "—"}</td>
-                    <td>{patient.language}</td>
+                    <td>{patient.language || "Hindi"}</td>
                     <td>{patient.email}</td>
+
                     <td>
                       <div className="patient-actions">
                         <button
@@ -272,6 +285,7 @@ export default function PatientProfile() {
                         >
                           <Pencil size={17} />
                         </button>
+
                         <button
                           className="patient-icon-btn patient-delete-btn"
                           onClick={() => deletePatient(patient.id)}
@@ -310,8 +324,11 @@ export default function PatientProfile() {
                 <h2 id="patient-form-title">
                   {editingId ? "Edit Patient" : "Add New Patient"}
                 </h2>
-                <p>Enter the patient's details and demo login credentials.</p>
+                <p>
+                  Enter the patient's details and demo login credentials.
+                </p>
               </div>
+
               <button
                 className="patient-icon-btn"
                 onClick={() => setShowForm(false)}
@@ -424,18 +441,22 @@ export default function PatientProfile() {
               )}
 
               <div className="patient-form-note">
-                Demo only: credentials are stored in this browser and are
-                not secure. Do not enter real patient or password data.
+                Demo only: this version stores patient data in this browser.
+                Do not enter real patient information or passwords.
               </div>
 
               <div className="patient-form-actions">
                 <button
                   type="button"
                   className="patient-secondary-btn"
-                  onClick={() => setShowForm(false)}
+                  onClick={() => {
+                    setShowForm(false);
+                    setError("");
+                  }}
                 >
                   Cancel
                 </button>
+
                 <button type="submit" className="patient-primary-btn">
                   {editingId ? "Save Changes" : "Create Patient"}
                 </button>
@@ -444,20 +465,6 @@ export default function PatientProfile() {
           </div>
         </div>
       )}
-=======
-/* PatientProfile.jsx */
-export default function PatientProfile() {
-  return (
-    <section className="section-page">
-      <h1>Patient Profile</h1>
-      <p>Patient details, language, care preferences and important notes.</p>
-      <div className="section-card">
-        <h2>Patient Information</h2>
-        <p>Patient name: Not configured</p>
-        <p>Preferred language: Hindi</p>
-        <p>Care notes: Add notes after obtaining appropriate consent.</p>
-      </div>
->>>>>>> origin/main
     </section>
   );
 }

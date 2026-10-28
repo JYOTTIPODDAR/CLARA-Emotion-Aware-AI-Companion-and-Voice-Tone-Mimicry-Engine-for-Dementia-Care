@@ -1,44 +1,28 @@
-import { Navigate } from "react-router-dom";
 
-<<<<<<< HEAD
-function ProtectedRoute({ children, allowedRole }) {
+import { Navigate, useLocation } from "react-router-dom";
+
+export default function ProtectedRoute({
+  children,
+  allowedRole,
+}) {
+  const location = useLocation();
+
   const isLoggedIn =
     localStorage.getItem("clara_logged_in") === "true";
 
   const userRole = localStorage.getItem("clara_user_role");
 
-  // Login nahi hai toh login page par bhejo
-=======
-function ProtectedRoute({ children }) {
-  const isLoggedIn = localStorage.getItem("clara_logged_in") === "true";
-
->>>>>>> origin/main
   if (!isLoggedIn) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/login" replace state={{ from: location }} />;
   }
 
-<<<<<<< HEAD
-  // Role allowed nahi hai toh correct dashboard par bhejo
   if (allowedRole && userRole !== allowedRole) {
     if (userRole === "patient") {
       return <Navigate to="/patient-dashboard" replace />;
     }
 
-    if (userRole === "caregiver") {
-      return <Navigate to="/dashboard" replace />;
-    }
-
-    // Invalid ya missing role
-    localStorage.removeItem("clara_logged_in");
-    localStorage.removeItem("clara_user_role");
-    localStorage.removeItem("clara_patient_id");
-
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/dashboard" replace />;
   }
 
-=======
->>>>>>> origin/main
   return children;
 }
-
-export default ProtectedRoute;
