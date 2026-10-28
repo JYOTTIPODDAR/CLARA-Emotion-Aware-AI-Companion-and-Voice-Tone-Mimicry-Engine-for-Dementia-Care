@@ -34,7 +34,11 @@ export default function Navbar() {
             className="profile-trigger"
             onClick={() => setShowProfile(!showProfile)}
           >
+<<<<<<< HEAD
             <span className="avatar">JA</span>
+=======
+            <span className="avatar">JK</span>
+>>>>>>> origin/main
             <span className="profile-text">
               <strong>Caregiver</strong>
               <small>CLARA Account</small>

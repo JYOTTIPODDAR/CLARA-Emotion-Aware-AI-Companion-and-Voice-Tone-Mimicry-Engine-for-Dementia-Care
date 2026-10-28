@@ -429,6 +429,7 @@
 .auth-input-wrap input[type="text"],
 .auth-input-wrap input[type="password"] {
   padding-right: 43px;
+<<<<<<< HEAD
 }
 
 
@@ -523,3 +524,6 @@
 .auth-role-message .auth-submit {
   width: 100%;
 }
+=======
+}
+>>>>>>> origin/main

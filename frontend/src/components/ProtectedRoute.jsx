@@ -1,5 +1,6 @@
 import { Navigate } from "react-router-dom";
 
+<<<<<<< HEAD
 function ProtectedRoute({ children, allowedRole }) {
   const isLoggedIn =
     localStorage.getItem("clara_logged_in") === "true";
@@ -7,10 +8,16 @@ function ProtectedRoute({ children, allowedRole }) {
   const userRole = localStorage.getItem("clara_user_role");
 
   // Login nahi hai toh login page par bhejo
+=======
+function ProtectedRoute({ children }) {
+  const isLoggedIn = localStorage.getItem("clara_logged_in") === "true";
+
+>>>>>>> origin/main
   if (!isLoggedIn) {
     return <Navigate to="/login" replace />;
   }
 
+<<<<<<< HEAD
   // Role allowed nahi hai toh correct dashboard par bhejo
   if (allowedRole && userRole !== allowedRole) {
     if (userRole === "patient") {
@@ -29,6 +36,8 @@ function ProtectedRoute({ children, allowedRole }) {
     return <Navigate to="/login" replace />;
   }
 
+=======
+>>>>>>> origin/main
   return children;
 }
 

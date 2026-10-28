@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 import { Navigate } from "react-router-dom";
 
 import DashboardLayout from "../components/DashboardLayout";
@@ -17,7 +20,11 @@ const DashboardRouting = [
   {
     path: "/dashboard",
     element: (
+<<<<<<< HEAD
       <ProtectedRoute allowedRole="caregiver">
+=======
+      <ProtectedRoute>
+>>>>>>> origin/main
         <DashboardLayout />
       </ProtectedRoute>
     ),

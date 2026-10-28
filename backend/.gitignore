@@ -1,4 +1,10 @@
 venv/
 __pycache__/
+<<<<<<< HEAD
 .env
 *.py[cod]
+=======
+*.py[cod]
+.env
+.pytest_cache/
+>>>>>>> origin/main
