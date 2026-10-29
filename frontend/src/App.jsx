@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingRouting from "./router/LandingRouting";
 import AuthenticationRouting from "./router/AuthenticationRouting";
 import DashboardRouting from "./router/DashboardRouting";
+import WhoAreYouRouting from "./router/WhoAreYouRouting";
 
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -19,7 +20,13 @@ import "./App.css";
 
 const router = createBrowserRouter([
   ...LandingRouting,
-  ...AuthenticationRouting,
+  ...WhoAreYouRouting,
+
+  {
+    path: "/authentication/*",
+    element: <AuthenticationRouting />,
+  },
+
   ...DashboardRouting,
 
   {
@@ -30,30 +37,12 @@ const router = createBrowserRouter([
       </ProtectedRoute>
     ),
     children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: "memories",
-        element: <Memories />,
-      },
-      {
-        path: "day",
-        element: <MyDay />,
-      },
-      {
-        path: "caregiver",
-        element: <CallCaregiver />,
-      },
-      {
-        path: "calm",
-        element: <CalmCorner />,
-      },
-      {
-        path: "settings",
-        element: <Settings />,
-      },
+      { index: true, element: <Home /> },
+      { path: "memories", element: <Memories /> },
+      { path: "day", element: <MyDay /> },
+      { path: "caregiver", element: <CallCaregiver /> },
+      { path: "calm", element: <CalmCorner /> },
+      { path: "settings", element: <Settings /> },
     ],
   },
 ]);

@@ -1,4 +1,5 @@
 import { Search, Bell, ChevronDown, Menu } from "lucide-react";
+import "./DashboardNavbar.css";
 
 export default function DashboardNavbar({ onMenuClick }) {
   return (

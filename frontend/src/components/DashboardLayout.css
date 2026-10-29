@@ -1,0 +1,65 @@
+
+/* CLARA — Main Dashboard Layout */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+.clara-app {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f3ff;
+  color: #17163f;
+}
+
+.clara-main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 0;
+  min-width: 0;
+  min-height: 100vh;
+  background: #f5f3ff;
+}
+
+.clara-content {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #f5f3ff;
+}
+
+/* Keep dashboard content inside the available area */
+.clara-content > * {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Avoid unwanted browser default margins */
+.clara-content h1,
+.clara-content h2,
+.clara-content h3,
+.clara-content p {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .clara-main {
+    width: calc(100% - 78px);
+  }
+}

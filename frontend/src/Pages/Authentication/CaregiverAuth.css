@@ -1,0 +1,284 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.care-auth-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  padding: 24px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-x: hidden;
+  background:
+    radial-gradient(ellipse at top left, #e8d9ff 0%, transparent 45%),
+    radial-gradient(ellipse at bottom right, #fbdcf0 0%, transparent 45%),
+    linear-gradient(135deg, #fbf7ff, #fff8fc);
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #171442;
+}
+
+.care-auth-back {
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  color: #171442;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.care-auth-back:hover {
+  transform: translateX(-3px);
+}
+
+.care-auth-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 28px 34px;
+  border: 1px solid rgba(191, 160, 255, 0.55);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 18px 55px rgba(107, 57, 174, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.care-auth-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.care-auth-logo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  color: #7139ec;
+}
+
+.care-auth-logo span {
+  position: absolute;
+  top: 8px;
+  left: 11px;
+  font-size: 17px;
+  line-height: 1;
+}
+
+.care-auth-brand h1 {
+  margin: 0;
+  color: #171442;
+  font-size: 31px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.care-auth-brand p {
+  margin: 4px 0 0;
+  color: #71688e;
+  font-size: 11px;
+}
+
+.care-auth-heading {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.care-auth-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 10px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  color: #6d35e8;
+  background: #eee4ff;
+}
+
+.care-login-icon {
+  color: #d52b91;
+  background: #ffe4f2;
+}
+
+.care-auth-heading h2 {
+  margin: 0;
+  font-size: 25px;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.care-auth-heading p {
+  margin: 7px 0 0;
+  color: #766c91;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.care-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.care-auth-form label {
+  margin-top: 3px;
+  color: #302650;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.care-auth-form input {
+  width: 100%;
+  height: 43px;
+  padding: 0 13px;
+  border: 1px solid #e1d5f5;
+  border-radius: 11px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: #20183c;
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.care-auth-form input::placeholder {
+  color: #a49ab7;
+}
+
+.care-auth-form input:focus {
+  border-color: #8749ed;
+  box-shadow: 0 0 0 3px rgba(135, 73, 237, 0.12);
+}
+
+.care-auth-submit {
+  min-height: 46px;
+  margin-top: 12px;
+  padding: 11px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  border-radius: 13px;
+  background: linear-gradient(100deg, #7841ee, #5424c6);
+  box-shadow: 0 8px 18px rgba(104, 48, 205, 0.2);
+  color: white;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.care-auth-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 11px 22px rgba(104, 48, 205, 0.25);
+}
+
+.care-login-submit {
+  background: linear-gradient(100deg, #eb4bab, #c52a91);
+  box-shadow: 0 8px 18px rgba(213, 43, 145, 0.18);
+}
+
+.care-auth-switch {
+  margin: 18px 0 0;
+  text-align: center;
+  color: #726887;
+  font-size: 13px;
+}
+
+.care-auth-switch a {
+  color: #7139e5;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.care-auth-switch a:hover {
+  text-decoration: underline;
+}
+
+.care-auth-note {
+  margin: 15px 0 0;
+  text-align: center;
+  color: #9b91ae;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.care-auth-error,
+.care-auth-success {
+  margin: 5px 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.care-auth-error {
+  color: #c62854;
+}
+
+.care-auth-success {
+  color: #24784b;
+}
+
+@media (max-width: 480px) {
+  .care-auth-page {
+    padding: 72px 14px 24px;
+    align-items: flex-start;
+  }
+
+  .care-auth-back {
+    top: 15px;
+    left: 15px;
+  }
+
+  .care-auth-card {
+    padding: 24px 20px;
+    border-radius: 22px;
+  }
+
+  .care-auth-heading h2 {
+    font-size: 23px;
+  }
+}
+
+@media (max-height: 760px) and (min-width: 481px) {
+  .care-auth-page {
+    align-items: flex-start;
+  }
+
+  .care-auth-card {
+    margin: 16px auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .care-auth-brand {
+    margin-bottom: 14px;
+  }
+
+  .care-auth-heading {
+    margin-bottom: 14px;
+  }
+
+  .care-auth-form {
+    gap: 6px;
+  }
+
+  .care-auth-form input {
+    height: 39px;
+  }
+
+  .care-auth-note {
+    margin-top: 10px;
+  }
+}

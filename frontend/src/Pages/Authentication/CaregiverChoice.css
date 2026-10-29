@@ -1,0 +1,531 @@
+
+/* Caregiver Choice Page */
+
+.caregiver-choice-page,
+.caregiver-choice-page * {
+  box-sizing: border-box;
+}
+
+.caregiver-choice-page {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 18px;
+  overflow: hidden;
+  color: #11143e;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:
+    radial-gradient(ellipse at 0% 0%, #e1d6ff 0%, transparent 38%),
+    radial-gradient(ellipse at 100% 70%, #ffe0f0 0%, transparent 35%),
+    #f8f4ff;
+}
+
+.choice-panel {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: calc(100vh - 36px);
+  min-height: calc(100dvh - 36px);
+  padding: 22px 28px 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 34px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 12% 0%, #f0e7ff 0%, transparent 35%),
+    radial-gradient(ellipse at 90% 60%, #fff0f8 0%, transparent 40%),
+    linear-gradient(135deg, #fffaff, #fff8fc 55%, #faf5ff);
+  box-shadow: 0 10px 40px rgba(100, 66, 180, 0.10);
+}
+
+.choice-top-shape {
+  position: absolute;
+  z-index: -1;
+  top: -100px;
+  right: -60px;
+  width: 420px;
+  height: 230px;
+  border-radius: 0 0 0 100%;
+  background: linear-gradient(135deg, #e9ddff, #f9efff);
+  opacity: 0.7;
+}
+
+.choice-bottom-wave {
+  position: absolute;
+  z-index: -1;
+  bottom: -100px;
+  left: -5%;
+  width: 110%;
+  height: 190px;
+  border-radius: 50% 50% 0 0;
+  background: linear-gradient(110deg, #e5d5ff, #f7eaff, #e9d8ff);
+  transform: rotate(-2deg);
+}
+
+.choice-back {
+  position: absolute;
+  z-index: 3;
+  top: 28px;
+  left: 28px;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  color: #11143e;
+  background: rgba(255, 255, 255, 0.82);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.choice-back:hover {
+  background: #fff;
+  transform: translateX(-3px);
+}
+
+.choice-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.choice-logo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 66px;
+  height: 66px;
+  color: #7535ed;
+}
+
+.choice-logo span {
+  position: absolute;
+  top: 20px;
+  left: 23px;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.choice-brand-text h1 {
+  margin: 0;
+  color: #10133c;
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -1.8px;
+}
+
+.choice-brand-text p {
+  margin: 7px 0 0;
+  color: #62618c;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.choice-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.choice-heading {
+  margin: 20px 0 34px;
+  text-align: center;
+}
+
+.choice-heading h2 {
+  margin: 0;
+  color: #10143f;
+  font-size: clamp(36px, 4vw, 54px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1.8px;
+}
+
+.choice-heading p {
+  margin: 12px 0 0;
+  color: #62618d;
+  font-size: clamp(19px, 2.5vw, 30px);
+  line-height: 1.3;
+}
+
+.choice-cards {
+  width: 100%;
+  max-width: 990px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.choice-card {
+  min-width: 0;
+  min-height: 390px;
+  padding: 30px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 2px solid;
+  border-radius: 38px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.choice-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(102, 62, 178, 0.10);
+}
+
+.choice-signup-card {
+  border-color: #e0d0ff;
+  background: linear-gradient(145deg, #f0e7ff, #f9f2ff);
+}
+
+.choice-login-card {
+  border-color: #ffd0e9;
+  background: linear-gradient(145deg, #ffedf6, #fff2f9);
+}
+
+.choice-icon {
+  width: 145px;
+  height: 145px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.signup-icon {
+  color: #5b22ee;
+  background: linear-gradient(145deg, #e8dcff, #eee5ff);
+}
+
+.login-icon {
+  color: #e51e85;
+  background: linear-gradient(145deg, #ffe0ef, #ffeaf5);
+}
+
+.choice-card h3 {
+  margin: 12px 0 8px;
+  color: #11143e;
+  font-size: 36px;
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+
+.choice-card > p {
+  min-height: 56px;
+  margin: 0 0 22px;
+  color: #62618d;
+  font-size: 21px;
+  line-height: 1.45;
+}
+
+.choice-action {
+  width: 100%;
+  min-height: 72px;
+  margin-top: auto;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 27px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.choice-action:hover {
+  transform: translateY(-2px);
+}
+
+.signup-action {
+  color: #fff;
+  background: linear-gradient(100deg, #7540ed, #5124c6);
+  box-shadow: 0 8px 18px rgba(98, 44, 213, 0.15);
+}
+
+.signup-action:hover {
+  box-shadow: 0 12px 25px rgba(98, 44, 213, 0.25);
+}
+
+.login-action {
+  color: #df2182;
+  border-color: #e72a8b;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.login-action:hover {
+  background: #fff;
+}
+
+/* Decorative leaves */
+
+.choice-leaves {
+  position: absolute;
+  z-index: -1;
+  color: #b99bf5;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.choice-leaves-top {
+  top: 42px;
+  right: 32px;
+  font-size: 100px;
+  transform: rotate(-35deg);
+}
+
+.choice-plant {
+  position: absolute;
+  z-index: -1;
+  bottom: -8px;
+  left: -12px;
+  font-size: 110px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.choice-heart {
+  position: absolute;
+  z-index: -1;
+  right: 65px;
+  bottom: 105px;
+  color: #c6a4ff;
+  font-size: 55px;
+  pointer-events: none;
+}
+
+/* Laptop screens and shorter browser windows */
+
+@media (min-width: 761px) and (max-height: 850px) {
+  .caregiver-choice-page {
+    padding: 10px;
+  }
+
+  .choice-panel {
+    min-height: calc(100dvh - 20px);
+    padding: 12px 24px 20px;
+    border-radius: 26px;
+  }
+
+  .choice-back {
+    top: 18px;
+    left: 18px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .choice-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .choice-logo svg {
+    width: 44px;
+    height: 44px;
+  }
+
+  .choice-logo span {
+    top: 14px;
+    left: 16px;
+    font-size: 19px;
+  }
+
+  .choice-brand-text h1 {
+    font-size: 36px;
+  }
+
+  .choice-brand-text p {
+    margin-top: 4px;
+    font-size: 11px;
+  }
+
+  .choice-heading {
+    margin: 12px 0 20px;
+  }
+
+  .choice-heading h2 {
+    font-size: 42px;
+  }
+
+  .choice-heading p {
+    margin-top: 7px;
+    font-size: 23px;
+  }
+
+  .choice-cards {
+    max-width: 900px;
+    gap: 22px;
+  }
+
+  .choice-card {
+    min-height: 0;
+    padding: 22px 22px 20px;
+    border-radius: 30px;
+  }
+
+  .choice-icon {
+    width: 105px;
+    height: 105px;
+  }
+
+  .choice-icon svg {
+    width: 58px;
+    height: 58px;
+  }
+
+  .choice-card h3 {
+    margin-top: 10px;
+    font-size: 29px;
+  }
+
+  .choice-card > p {
+    min-height: 48px;
+    margin-bottom: 16px;
+    font-size: 17px;
+  }
+
+  .choice-action {
+    min-height: 54px;
+    padding: 10px 16px;
+    gap: 12px;
+    font-size: 22px;
+  }
+
+  .choice-action svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .choice-plant {
+    font-size: 75px;
+  }
+}
+
+/* Mobile and tablet */
+
+@media (max-width: 760px) {
+  .caregiver-choice-page {
+    padding: 10px;
+    overflow: auto;
+  }
+
+  .choice-panel {
+    min-height: calc(100dvh - 20px);
+    padding: 80px 16px 32px;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  .choice-back {
+    top: 16px;
+    left: 16px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .choice-brand {
+    gap: 8px;
+  }
+
+  .choice-logo {
+    width: 46px;
+    height: 46px;
+  }
+
+  .choice-logo svg {
+    width: 44px;
+    height: 44px;
+  }
+
+  .choice-logo span {
+    top: 13px;
+    left: 15px;
+    font-size: 18px;
+  }
+
+  .choice-brand-text h1 {
+    font-size: 32px;
+  }
+
+  .choice-brand-text p {
+    font-size: 10px;
+  }
+
+  .choice-heading {
+    margin: 26px 0 24px;
+  }
+
+  .choice-heading h2 {
+    font-size: 36px;
+  }
+
+  .choice-heading p {
+    font-size: 18px;
+  }
+
+  .choice-cards {
+    max-width: 420px;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .choice-card {
+    min-height: 0;
+    padding: 22px 20px;
+    border-radius: 26px;
+  }
+
+  .choice-icon {
+    width: 94px;
+    height: 94px;
+  }
+
+  .choice-icon svg {
+    width: 52px;
+    height: 52px;
+  }
+
+  .choice-card h3 {
+    font-size: 28px;
+  }
+
+  .choice-card > p {
+    min-height: 0;
+    font-size: 16px;
+    margin-bottom: 18px;
+  }
+
+  .choice-action {
+    min-height: 52px;
+    font-size: 21px;
+  }
+
+  .choice-leaves-top {
+    top: 20px;
+    right: 4px;
+    font-size: 65px;
+  }
+
+  .choice-plant {
+    font-size: 65px;
+  }
+
+  .choice-heart {
+    right: 20px;
+    bottom: 30px;
+    font-size: 35px;
+  }
+}

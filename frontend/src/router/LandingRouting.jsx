@@ -1,4 +1,4 @@
-import LandingPage from "../Pages/Landing/LandingPage.jsx";
+import LandingPage from "../Pages/Landing/LandingPage";
 
 const LandingRouting = [
   {

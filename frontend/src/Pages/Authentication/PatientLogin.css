@@ -1,0 +1,403 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+.patient-login-page,
+.patient-login-page * {
+  box-sizing: border-box;
+}
+
+.patient-login-page {
+  min-height: 100vh;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    #eee4ff 0%,
+    #fff8fc 52%,
+    #f8ddff 100%
+  );
+  font-family: "Poppins", sans-serif;
+  color: #171744;
+}
+
+.patient-login-card {
+  width: 100%;
+  max-width: 1050px;
+  min-height: 610px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 32px;
+  padding: 28px 42px 34px;
+  background: rgba(255, 252, 255, 0.82);
+  box-shadow: 0 18px 55px rgba(113, 69, 177, 0.12);
+}
+
+.patient-back-button {
+  position: absolute;
+  z-index: 3;
+  top: 25px;
+  left: 25px;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  color: #171744;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.patient-back-button:hover {
+  transform: translateX(-3px);
+}
+
+.patient-brand {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  margin: 0 auto 35px;
+}
+
+.patient-brand-icon {
+  position: relative;
+  display: flex;
+  color: #7739ee;
+}
+
+.patient-brand-icon span {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.patient-brand h1 {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+}
+
+.patient-brand p {
+  margin: 5px 0 0;
+  color: #5d6388;
+  font-size: 11px;
+}
+
+.patient-login-layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: 24px;
+}
+
+.patient-form-section {
+  min-width: 0;
+  padding: 5px 0 0 16px;
+}
+
+.patient-form-section h2 {
+  margin: 0 0 10px;
+  font-size: clamp(30px, 3.2vw, 42px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -1.3px;
+}
+
+.patient-subtitle {
+  margin: 0 0 24px;
+  color: #505d83;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.patient-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.patient-input {
+  min-width: 0;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 0 17px;
+  border: 1.5px solid #e1d5ff;
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.83);
+  color: #465681;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.patient-input:focus-within {
+  border-color: #8b50f5;
+  box-shadow: 0 0 0 3px rgba(139, 80, 245, 0.09);
+}
+
+.patient-input input {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #171744;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.patient-input input::placeholder {
+  color: #969cba;
+}
+
+.patient-password-toggle {
+  display: grid;
+  place-items: center;
+  padding: 5px;
+  border: none;
+  background: transparent;
+  color: #465681;
+  cursor: pointer;
+}
+
+.patient-login-button {
+  height: 57px;
+  margin-top: 3px;
+  border: none;
+  border-radius: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background: linear-gradient(105deg, #e64db1, #c52e9d);
+  color: white;
+  font-family: inherit;
+  font-size: 19px;
+  font-weight: 700;
+  box-shadow: 0 10px 23px rgba(208, 54, 159, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.patient-login-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 13px 26px rgba(208, 54, 159, 0.27);
+}
+
+.patient-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-top: 19px;
+  padding: 16px;
+  border-radius: 19px;
+  background: linear-gradient(110deg, #f0e4ff, #f9e7fb);
+  color: #6f35e8;
+}
+
+.patient-info svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.patient-info p {
+  margin: 0;
+  color: #29265f;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.patient-visual {
+  position: relative;
+  min-width: 0;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.patient-image-glow {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 207, 237, 0.85),
+    rgba(238, 221, 255, 0.35) 70%,
+    transparent
+  );
+}
+
+.patient-visual img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: 390px;
+  max-height: 350px;
+  object-fit: contain;
+  border-radius: 25px;
+}
+
+.patient-heart {
+  position: absolute;
+  z-index: 2;
+  color: #ed63b4;
+  font-size: 29px;
+}
+
+.heart-a {
+  top: 20px;
+  right: 45px;
+}
+
+.heart-b {
+  top: 90px;
+  left: 12px;
+  font-size: 23px;
+}
+
+.patient-bottom-wave {
+  position: absolute;
+  z-index: 0;
+  bottom: -80px;
+  left: -5%;
+  width: 110%;
+  height: 135px;
+  border-radius: 50% 50% 0 0;
+  background: linear-gradient(110deg, #e8d7ff, #f5dcff);
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .patient-login-page {
+    padding: 16px;
+  }
+
+  .patient-login-card {
+    max-width: 600px;
+    min-height: auto;
+    padding: 25px 28px 30px;
+  }
+
+  .patient-brand {
+    margin-bottom: 24px;
+  }
+
+  .patient-login-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .patient-form-section {
+    padding: 0;
+  }
+
+  .patient-visual {
+    grid-row: 1;
+    height: 210px;
+  }
+
+  .patient-visual img {
+    max-height: 205px;
+    max-width: 300px;
+  }
+
+  .patient-form-section h2 {
+    font-size: 32px;
+  }
+
+  .patient-subtitle {
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+
+  .patient-info {
+    margin-top: 15px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 420px) {
+  .patient-login-page {
+    padding: 10px;
+  }
+
+  .patient-login-card {
+    border-radius: 23px;
+    padding: 22px 17px 25px;
+  }
+
+  .patient-back-button {
+    top: 16px;
+    left: 15px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .patient-brand {
+    gap: 7px;
+    margin-bottom: 20px;
+  }
+
+  .patient-brand-icon svg {
+    width: 31px;
+    height: 31px;
+  }
+
+  .patient-brand h1 {
+    font-size: 27px;
+  }
+
+  .patient-brand p {
+    font-size: 9px;
+  }
+
+  .patient-visual {
+    height: 175px;
+  }
+
+  .patient-visual img {
+    max-height: 170px;
+  }
+
+  .patient-form-section h2 {
+    font-size: 29px;
+  }
+
+  .patient-input {
+    height: 51px;
+    padding: 0 12px;
+    gap: 9px;
+  }
+
+  .patient-login-button {
+    height: 52px;
+    font-size: 17px;
+  }
+
+  .patient-info {
+    padding: 12px;
+  }
+
+  .patient-info p {
+    font-size: 11px;
+  }
+}
